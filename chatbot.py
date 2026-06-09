@@ -96,6 +96,8 @@ with st.sidebar:
 
     if st.button("🗑️ Clear chat"):
         st.session_state.messages = []
+        st.session_state.doc_text = ""
+        st.session_state.doc_name = ""
         st.rerun()
 
     st.divider()
@@ -121,7 +123,15 @@ if user_input:
         st.markdown(user_input)
 
     # If document is uploaded, attach it to the message
-    if st.session_state.doc_text:
+    # Only attach document if the message seems to be about it
+    doc_keywords = ["summarize", "summary", "ats", "score", "resume", 
+                    "document", "pdf", "file", "key points", "what does", 
+                    "tell me about", "review", "analyse", "analyze"]
+
+    user_lower = user_input.lower()
+    is_doc_related = any(keyword in user_lower for keyword in doc_keywords)
+
+    if st.session_state.doc_text and is_doc_related:
         full_message = f"""{user_input}
 
 [Document: {st.session_state.doc_name}]
