@@ -173,11 +173,4 @@ Click **"🗑️ Clear chat"** in the sidebar to start fresh.
 - Scanned PDF files (images of text) cannot be read — only text-based PDFs work
 - Very large documents may be slow to process
 
----
-
-## 👩‍💻 Built By
-
-**Neha Penumetcha**  
-Final-Year B.Tech CSE Student @ GITAM Deemed University  
-[LinkedIn](www.linkedin.com/in/neha-penumetcha-036886286) · [GitHub](https://github.com/neha-penumetcha)
 
