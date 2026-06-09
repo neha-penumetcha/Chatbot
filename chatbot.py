@@ -92,11 +92,6 @@ with st.sidebar:
         st.success(f"✅ {st.session_state.doc_name}")
         st.caption(f"{len(st.session_state.doc_text):,} characters extracted")
 
-        if st.button("❌ Remove document"):
-            st.session_state.doc_text = ""
-            st.session_state.doc_name = ""
-            st.rerun()
-
     st.divider()
 
     if st.button("🗑️ Clear chat"):
